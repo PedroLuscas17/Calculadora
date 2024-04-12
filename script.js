@@ -103,6 +103,17 @@ class Calculadora {
         this.nrVisor = String(resultado).slice(0, 10);
     }
 
+    // Limpa dados (Incluindo memória)
+    teclaOnOff() {
+        this.nrVisor = '0';
+        this.ptDecimal = false;
+        this.iniciouSegundo = false;
+        this.memTemp = '';
+        this.estadoErro = false;
+        this.memoria = 0;
+        this.opAtual = this.op.NOP;
+    }
+
     // Limpa dados (exceto memória)
     teclaC() {
         this.nrVisor = '0';
@@ -166,6 +177,12 @@ let defOp = (op) => {
 // CALCULA A OPERAÇÃO
 let defIgual = () => {
     calculadora.igual();
+    atualizaVisor();
+}
+
+// TECLA ON/OFF: LIMPA TUDO, INCLUINDO MEMÓRIA
+let teclaOnOff = () => {
+    calculadora.teclaOnOff();
     atualizaVisor();
 }
 
