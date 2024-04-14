@@ -13,7 +13,9 @@ class Calculadora {
             DIV: 1,
             MULT: 2,
             SUB: 3,
-            SUM: 4
+            SUM: 4,
+            SQRT: 5,
+            POW : 6
         };
         this.opAtual = this.op.NOP;
     }
@@ -67,6 +69,12 @@ class Calculadora {
             case '/':
                 this.opAtual = this.op.DIV;
                 break;
+            case '√':
+                this.opAtual = this.op.SQRT;
+                break;
+            case '^':
+                this.opAtual = this.op.POW;
+                break;
         }
         this.memTemp = this.nrVisor;
     }
@@ -95,6 +103,17 @@ class Calculadora {
             case this.op.SUM:
                 resultado = num1 + num2;
                 break;
+            case this.op.SQRT:
+                if (isNaN(num1) || num1 < 0) {
+                    this.estadoErro = true;
+                        return;
+                    }
+                resultado = calcularRaizQuadrada(num1);
+                    break;
+            case this.op.POW:
+                resultado = calcularPotencia(num1, num2);
+                    break;
+                
         }
         this.opAtual = this.op.NOP;
         this.iniciouSegundo = false;
@@ -106,6 +125,7 @@ class Calculadora {
     // Limpa dados (Incluindo memória)
     teclaOff() {
         this.nrVisor = ' ';
+        
     
     }
     teclaOn(){
@@ -154,6 +174,31 @@ class Calculadora {
         this.memoria = 0;
     }
 
+}
+
+// ==================================================================
+//  LÓGICA DAS OPERAÇÕES
+// ==================================================================
+
+function calcularRaizQuadrada(num) {
+    let precisao = 1e-15; // Precisão desejada
+    let x = num;
+    let y = 1;
+
+    while (x - y > precisao) {
+        x = (x + y) / 2;
+        y = num / x;
+    }
+
+    return x;
+}
+
+function calcularPotencia(base, expoente) {
+    let resultado = 1;
+    for (let i = 0; i < expoente; i++) {
+        resultado *= base;
+    }
+    return resultado;
 }
 
 // ==================================================================
