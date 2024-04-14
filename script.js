@@ -104,15 +104,21 @@ class Calculadora {
     }
 
     // Limpa dados (Incluindo memória)
-    teclaOnOff() {
+    teclaOff() {
+        this.nrVisor = ' ';
+    
+    }
+    teclaOn(){
+
         this.nrVisor = '0';
         this.ptDecimal = false;
         this.iniciouSegundo = false;
         this.memTemp = '';
         this.estadoErro = false;
-        this.memoria = 0;
-        this.opAtual = this.op.NOP;
-    }
+        this.memoria = 0;  
+        this.opAtual = this.op.NOP;     
+}
+    
 
     // Limpa dados (exceto memória)
     teclaC() {
@@ -181,8 +187,12 @@ let defIgual = () => {
 }
 
 // TECLA ON/OFF: LIMPA TUDO, INCLUINDO MEMÓRIA
-let teclaOnOff = () => {
-    calculadora.teclaOnOff();
+let teclaOff = () => {
+calculadora.teclaOff();
+atualizaVisor();
+}
+let teclaOn = () =>{
+    calculadora.teclaOn();
     atualizaVisor();
 }
 

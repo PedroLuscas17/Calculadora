@@ -54,6 +54,26 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 0.7fr;
 }
+.tecla-ligar{
+    padding: 8px;
+    background-color: rgb(108, 236, 108);
+    color: rgb(235, 48, 148);
+    margin: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 3px rgb(0, 0, 0, 0.5);
+}
+.tecla-desligar{
+    padding: 8px;
+    background-color: rgb(255, 87, 51);
+    color: rgb(65, 5, 37);
+    margin: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 3px rgb(0, 0, 0, 0.5);
+}
 
 .tecla {
     padding: 8px;
