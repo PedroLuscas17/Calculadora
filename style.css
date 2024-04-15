@@ -119,3 +119,13 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1em;
 }
+
+.tecla-percent {
+    background-color: rgb(235, 48, 148); 
+    color: white; 
+}
+
+.visor-percent {
+    font-size: 24px; 
+    font-weight: bold; 
+}

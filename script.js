@@ -15,7 +15,8 @@ class Calculadora {
             SUB: 3,
             SUM: 4,
             SQRT: 5,
-            POW : 6
+            POW : 6,
+            PORC: 7
         };
         this.opAtual = this.op.NOP;
     }
@@ -75,6 +76,8 @@ class Calculadora {
             case '^':
                 this.opAtual = this.op.POW;
                 break;
+            case '%':
+                this.opAtual = this.op.PORC;
         }
         this.memTemp = this.nrVisor;
     }
@@ -113,6 +116,8 @@ class Calculadora {
             case this.op.POW:
                 resultado = calcularPotencia(num1, num2);
                     break;
+            case this.op.PORC:
+                resultado = num1 * (num2 / 100);
                 
         }
         this.opAtual = this.op.NOP;
@@ -200,6 +205,9 @@ function calcularPotencia(base, expoente) {
     }
     return resultado;
 }
+
+
+
 
 // ==================================================================
 //  RESPOSTAS A EVENTOS DO HTML
