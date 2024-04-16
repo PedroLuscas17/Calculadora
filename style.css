@@ -56,7 +56,7 @@ body {
     gap: 10px;
 }
 .tecla-ligar{
-    padding: 12px;
+    padding: 8px;
     background-color: rgb(43, 255, 43);
     color: rgb(235, 48, 148);
     margin: auto;
@@ -67,7 +67,7 @@ body {
     box-shadow: 2px 2px 3px 3px rgb(0, 0, 0, 0.5);
 }
 .tecla-desligar{
-    padding: 12px;
+    padding: 8px;
     background-color: rgb(255, 4, 4);
     color: rgb(65, 5, 37);
     margin: auto;
@@ -79,7 +79,7 @@ body {
 }
 
 .tecla {
-    padding: 12px;
+    padding: 8px;
     background-color: white;
     color: rgb(235, 48, 148);
     margin: 10px;
