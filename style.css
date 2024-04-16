@@ -8,7 +8,7 @@ body {
 
 .container {
     background-color: rgba(253, 23, 130, 0.805);
-    width: 450px;
+    width: 470px;
     margin: auto;
     margin-top: 30px;
     /* padding: 20px; */
@@ -52,23 +52,26 @@ body {
     border: 6px solid rgb(180, 70, 129);
     border-radius: 15px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.7fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 .tecla-ligar{
-    padding: 8px;
-    background-color: rgb(108, 236, 108);
+    padding: 12px;
+    background-color: rgb(43, 255, 43);
     color: rgb(235, 48, 148);
-    margin: 10px;
+    margin: auto;
+    margin-top: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2em;
     border-radius: 10px;
     box-shadow: 2px 2px 3px 3px rgb(0, 0, 0, 0.5);
 }
 .tecla-desligar{
-    padding: 8px;
-    background-color: rgb(255, 87, 51);
+    padding: 12px;
+    background-color: rgb(255, 4, 4);
     color: rgb(65, 5, 37);
-    margin: 10px;
+    margin: auto;
+    margin-top: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2em;
     border-radius: 10px;
@@ -76,7 +79,7 @@ body {
 }
 
 .tecla {
-    padding: 8px;
+    padding: 12px;
     background-color: white;
     color: rgb(235, 48, 148);
     margin: 10px;

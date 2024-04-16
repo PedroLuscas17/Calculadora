@@ -57,6 +57,7 @@ class Calculadora {
     // Definir qual a operação atual
     defineOperacao(op) {
         if (this.estadoErro) return;
+        this.opAnterior = this.opAtual;
         switch (op) {
             case '+':
                 this.opAtual = this.op.SUM;
@@ -117,7 +118,23 @@ class Calculadora {
                 resultado = calcularPotencia(num1, num2);
                     break;
             case this.op.PORC:
-                resultado = num1 * (num2 / 100);
+                switch (this.opAnterior) {
+                    case this.op.DIV:
+                        resultado = num1 / 100 * num2;
+                        break;
+                    case this.op.MULT:
+                        resultado = num1 * num2 / 100;
+                        break;
+                    case this.op.SUB:
+                        resultado = num1 - num1 * num2 / 100;
+                        break;
+                    case this.op.SUM:
+                        resultado = num1 + num1 * num2 / 100;
+                        break;
+                    default:
+                        resultado = num1 * (num2 / 100); // Não há operação anterior
+                }
+                break;
                 
         }
         this.opAtual = this.op.NOP;
@@ -205,7 +222,6 @@ function calcularPotencia(base, expoente) {
     }
     return resultado;
 }
-
 
 
 
